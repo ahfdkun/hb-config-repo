@@ -1,0 +1,22 @@
+spring: 
+  defaultDatasource:
+    url: "jdbc:sqlserver://192.168.10.107:1433;DatabaseName=hb_share"
+    username: hb_share
+    password: CaIrtfiiACBf7D/B8DldfjpPaWUQmIIL
+lts:
+  tasktracker:
+    cluster-name: qf_cluster
+    registry-address: zookeeper://zoo1:2181,zoo2:2181,zoo3:2181
+    node-group: CommonServiceTaskTracker
+    configs:
+      job:
+        fail:
+          store: mapdb
+qf:
+  fyapi:
+    appid: openapi-kw-access-id
+    appkey: CC902E4D-549A-43F9-81F6-3BBBA57CCEED
+    broker-property-url: http://open-api.qiaofangyun.com/fyapi/v1/fyapi/property/getBrokerCirclePropertyInfo?propertyUuid={propertyUuid}
+    broker-employee-url: http://open-api.qiaofangyun.com/fyapi/v1/fyapi/user/getBrokerCircleEmployee?employeeUuid={employeeUuid}
+    publish-property-url: http://open-api.qiaofangyun.com/fyapi/v1/fyapi/hbProperty/publishProperty
+    unshelve-property-url: http://open-api.qiaofangyun.com/fyapi/v1/fyapi/hbProperty/unShelveProperty

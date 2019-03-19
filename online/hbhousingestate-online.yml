@@ -1,0 +1,14 @@
+spring: 
+  defaultDatasource:
+    url: "jdbc:sqlserver://192.168.10.107:1433;DatabaseName=hb_housingestate"
+    username: h_housingestate
+    password: U3C+QVR7VCT9k/d/Z6PajYAgGs1OEDbK
+lts:
+  tasktracker:
+    cluster-name: qf_cluster
+    registry-address: zookeeper://zoo1:2181,zoo2:2181,zoo3:2181
+    node-group: CommonServiceTaskTracker
+    configs:
+      job:
+        fail:
+          store: mapdb

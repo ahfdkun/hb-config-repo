@@ -1,0 +1,31 @@
+swagger:
+  enabled: true
+
+ignoreToken:
+  enabled: true
+
+zuul:
+  routes:
+    hbsharewebbff-route:
+      path: /api/hbsharewebbff/**
+      url: http://hbsharewebbff:8080
+  max:
+    host:
+      connections: 500
+  host:
+    socket-timeout-millis: 50000
+    connect-timeout-millis: 50000
+  add-host-header: true
+
+ignore:
+  url: /hbsharewebbff
+
+spring:
+  defaultDatasource:
+    url: "jdbc:sqlserver://192.168.1.149:1433;DatabaseName=hb_share_test"
+    username: sa
+    password: 9itImGqc3dk7IPt8FG23VQ==
+  http: 
+    multipart: 
+      max-file-size: 10Mb
+      max-request-size: 100Mb

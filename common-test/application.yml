@@ -1,0 +1,93 @@
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    initialSize: 10
+    minIdle: 10
+    maxActive: 100
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 200
+    removeAbandoned: true
+    removeAbandonedTimeout: 1800
+    logAbandoned: true
+    proxyFilters: stat-filter
+    slowSqlMillis: 2000
+    logSlowSql: true
+    mergeSql: false
+    loginDruidUsername: admin
+    loginDruidPassword: password2
+    dbType: sqlserver
+    logViolation: true
+    throwException: true
+    defaultDB: master
+  redis:
+    database: 0
+    host: redis-master
+    port: 6379
+    password:
+    pool:
+      max-active: 8
+      max-wait: 1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+    cluster:
+      nodes:
+         - 192.168.2.50:7001
+         - 192.168.2.51:7001
+         - 192.168.2.52:7001
+         - 192.168.2.53:7001
+         - 192.168.2.54:7001
+         - 192.168.2.55:7001
+      maxIdle: 100
+      minIdle: 10
+      maxTotal: 500
+      maxWaitMills: 3000
+      testOnBorrow: true
+      testOnReturn: true
+      testWhileIdle: true
+      minEvictableIdleTimeMillis: 500
+      softMinEvictableIdleTimeMillis: 1000
+      timeBetweenEvictionRunsMillis: 1000
+      numTestsPerEvictionRun: 100
+  http:
+    multipart:
+      maxFileSize: 10Mb
+      maxRequestSize: 100Mb
+
+hystrix:
+  command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 60000
+  threadpool:
+    default:
+      coreSize: 500
+ribbon:
+   ReadTimeout: 60000
+   ConnectTimeout: 5000
+   OkToRetryOnAllOperations: false
+qiniu:
+  upload:
+    bucket: planh
+    viewUrl: http://planh.qfstatic.com/
+    accessKey: 19MWcvu_DQadEbW2U-_DwNd_VYS2nHmiHVeRMyJd
+    secretKey: 41pEzhttF3vOiCSKy257h-WWmU7VmC9vbveUo4of
+    watermarkscale: 0.3
+
+
+
+############### service feign url  begin #####################
+feign:
+    url:
+        hbshare: http://hbshare:8080
+
+############### service feign url  end #####################

@@ -1,0 +1,33 @@
+spring: 
+  defaultDatasource:
+    url: "jdbc:sqlserver://192.168.1.149:1433;DatabaseName=hb_organization_dev"
+    username: sa
+    password: 9itImGqc3dk7IPt8FG23VQ==
+lts:
+  tasktracker:
+    cluster-name: qf_cluster
+    registry-address: zookeeper://zoo1:2181,zoo2:2181,zoo3:2181
+    node-group: CommonServiceTaskTracker
+    configs:
+      job:
+        fail:
+          store: mapdb
+singleLogin: false
+defaultCity:
+    uuid: 8F499FAB-A408-4E8F-8E50-C1E8BBB8E2D0
+    name: 上海
+wx: 
+  appId: wx3130433c438694e6
+  appSecret: 459a0b54cce0b4e258a0e0d0c1a43d3f
+  token: qiaofang
+  aesKey: f82PVzQsKG5d8en3DwnZ8VVEoGInkmsWz3X3HsreEqe
+  mchId: 
+  apiKey: 
+sms: 
+  url: http://192.168.2.110:9063/call/sendSms
+  token: 0de2ad52-3d12-44d8-a23c-61d14a55f0d0
+  mainAccountCode: 80005
+  subAccountCode: 80005001
+  secret: 
+  channelCode: 
+  
