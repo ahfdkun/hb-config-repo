@@ -67,12 +67,12 @@ hystrix:
         execution:
           isolation:
             thread:
-              timeoutInMilliseconds: 10000
+              timeoutInMilliseconds: 60000
   threadpool:
     default:
       coreSize: 500
 ribbon:
-   ReadTimeout: 10000
+   ReadTimeout: 60000
    ConnectTimeout: 5000
    OkToRetryOnAllOperations: false
 qiniu:
